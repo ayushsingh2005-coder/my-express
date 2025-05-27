@@ -1,3 +1,5 @@
+// SERVER CREATED USING NODE.JS MANUALLY 
+
 const http = require('http');
 const { readFileSync } = require('fs');
 

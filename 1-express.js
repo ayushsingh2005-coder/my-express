@@ -1,4 +1,4 @@
-//this is the basic example of hpw you would create server and handle request 
+//this is the basic example of how you would create server and handle request 
 // learn express from this file onwards :
 
 const express = require('express');
@@ -37,6 +37,21 @@ app.listen(5000, () => {
 //          and 
 // BY DEFAULT ,THE BROWSER PERFORM THE GET REQUEST.
 // ----------------------------------------
+
+
+//🔹app.get(path, callback)
+// Used to retrieve data (READ).
+
+//🔹 app.post(path, callback)
+// Used to send data to the server to create something (CREATE).
+
+//🔹 app.put(path, callback)
+// Used to update existing data (UPDATE entire object).
+
+
+//🔹 app.delete(path, callback)
+// Used to delete data (DELETE).
+
 //🔹 app.all(path, callback) :  
 // Handles all HTTP methods (GET, POST, PUT, DELETE, etc.) for a specific route.
 
@@ -45,3 +60,4 @@ app.listen(5000, () => {
 
 //🔹 app.listen(port, callback)  : 
 //  Starts the server and begins listening for incoming requests on a specified port.
+
