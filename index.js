@@ -1,11 +1,11 @@
-// INTRODUCTION :
+// INTRODUCTION :➤ ➤ ➤ ➤ ➤ 
 
-// in express or in http case ,api is all about settingup http interface to interact with our data(sent through json) and in order to send back our reslinse we're going to use res.json method which will do like example setting up the proper content type and stringfy our data.using RES,json method
+// in express or in http case ,api is all about setting up http interface to interact with our data(sent through json) and in order to send back our reslinse we're going to use res.json method which will do like example setting up the proper content type and stringfy our data.using RES,json method
 
 // SSR : this is the other side where we setup the templated and send back entire html,css ,js and we we'll do it by using res.render method()
 
 
-//  API - JSON  VS  SSR - TEMPLATE
+// ➤ API - JSON  VS  SSR - TEMPLATE
 
 // SEND DATA         SEND TEMPLATE
 // RES.JSON()        RES.RENDER()
@@ -16,4 +16,30 @@
 //🔸USE IT TO SETUP API
 //          OR
 //🔸TEMPLATES WITH  SSR (Server Side Rendering)
+
+// 🔧 res.json() — What It Is
+// ➤ It’s a method in Express.js used to:
+// Send a JSON response to the client (browser, frontend, or another server)
+
+// Automatically:
+//➤ Sets the Content-Type header to application/json.
+
+//➤ Converts JavaScript objects/arrays into JSON format
+
+
+
+const express = require('express');
+const app = express();
+
+
+app.get('/' , (req,res)=>{
+    res.json([{name:'john'},{name:'susan'}])
+})
+
+
+
+app.listen(5000 , ()=>{
+    console.log("server is listening on http://localhost:5000/");
+    
+})
 
