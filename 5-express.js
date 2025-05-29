@@ -1,4 +1,4 @@
-//📝 MIDDLEWARES  and app.use(middleware)📌
+//📝 Intorduction : MIDDLEWARES  and app.use(middleware)📌
 // =======================================
 //📌Middleware are the functions that will execute during the request to the server .
 // =======================================
@@ -51,3 +51,5 @@ app.listen(5000 , ()=>{
     console.log("server is listening at http://localhost:5000");
     
 })
+
+// MORE ABOUT MIDDLEWARE IN 6-express.js
