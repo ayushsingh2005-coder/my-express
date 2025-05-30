@@ -43,7 +43,7 @@ app.get('/about' ,(req,res)=>{
 app.get('/api/products' ,(req,res)=>{
     res.send('Product');
 })
-app.get('/api/itmes' ,(req,res)=>{
+app.get('/api/items' ,(req,res)=>{
     res.send('items');
 })
 
