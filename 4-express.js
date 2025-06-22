@@ -9,9 +9,9 @@ const express = require('express');
 const app = express();
 const {products} = require('./data.js')
 
-app.get('/' , (req,res)=>{
-    res.json(products)  //print the json file in DOM
-})
+// app.get('/' , (req,res)=>{
+//     res.json(products)  //print the json file in DOM
+// })
 
 app.get('/',(req,res)=>{
     res.send('<h1>home page</h1><a href ="/api/products">products</a>');
