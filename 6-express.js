@@ -20,6 +20,7 @@ app.get('/about' ,(req,res)=>{
 app.get('/api/products' ,(req,res)=>{
     res.send('Product');
 })
+// suppose we don't wanna apply the middleware to every request ,we can just put it in single request like we did below 
 app.get('/api/items',[logger,authorize] ,(req,res)=>{
     console.log(req.user);
     
