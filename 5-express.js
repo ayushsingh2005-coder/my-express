@@ -33,6 +33,10 @@ const logger = require('./logger.js')
 
 app.use('/api',logger);  //logger is middleware.this is gonna apply to both of them :products as well as items 
 
+// app.get('/' , logger ,(req,res)=>{
+//     res.send('home');
+// })
+//➤ we can also put middleware function in between request and response as above stated.
 
 app.get('/' ,(req,res)=>{
     res.send('home page');
