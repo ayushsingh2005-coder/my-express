@@ -32,6 +32,8 @@ const app = express();
 const logger = require('./logger.js')
 
 app.use('/api',logger);  //logger is middleware.this is gonna apply to both of them :products as well as items 
+// IT CAN APPLY TO ANY OF THE ROUTE FOLLOWING api -->> api/home/about/products
+
 
 // app.get('/' , logger ,(req,res)=>{
 //     res.send('home');
