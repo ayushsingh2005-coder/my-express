@@ -20,7 +20,7 @@
 // here the method comes in express.js 
 // ➤ APP.USE(path(optional),middleware) 
 
-// app.use(middleware)
+// app.use('path' , middleware)
 //⚠️ Order Matter here: you have to invoke app.use(path ,middleware) at certain level
 
 // ================ CODE =================
