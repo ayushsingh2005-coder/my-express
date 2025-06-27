@@ -1,7 +1,15 @@
+// THIRD PARTY MIDDLEWARE :
+
+// visit morgan npm (commonly used third party middleware )
+// npm i morgan - package installation 
+
+
 
 const express = require('express');
 
 const app = express();
+
+const morgan = require('morgan');
 
 const logger = require('./logger.js')
 
@@ -16,6 +24,8 @@ const authorize = require('./authorize')
 
 // app.use([logger,authorize]);
 
+app.use(morgan('tiny'));
+
 app.get('/' ,(req,res)=>{
     res.send('home page');
 })
@@ -25,7 +35,7 @@ app.get('/about' ,(req,res)=>{
 app.get('/api/products' ,(req,res)=>{
     res.send('Product');
 })
-// suppose we don't wanna apply the middleware to every request ,we can just put it in single request like we did below 
+
 app.get('/api/items',[logger,authorize] ,(req,res)=>{
     console.log(req.user);
     
@@ -37,11 +47,4 @@ app.listen(5000 , ()=>{
     
 })
 
-//NOTE :
-// we can add middleware ,use their function and also we can use any of the stored value inside any variable from  the middleware function .
-
-// console.log(req.user) //req.user is present in authorize.js.
-
-// put the above console.log() in any of the routes above and you will get the results in console terminal after writing the same url in browser
-
-// when you wanna put middleware more than one and specifically to any of the routes ,put the middlewares inside the array separated by commas and put it after the path of any route separated by commas
+// GET /about 200 5 - 0.515 ms => this is the output that can be seen in the console screen , the method of requesting ,path ,status code  , response time.
