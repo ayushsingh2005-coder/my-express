@@ -1,4 +1,4 @@
-// HTTP METHODS :GET AND POST (Type 2: javascript form)
+// HTTP METHODS :GET AND POST (Type 2: javascript form) and PUT Method
 
 const express = require('express');
 const app = express();
@@ -35,6 +35,19 @@ app.post('/login',(req,res)=>{
     res.send('POST');
 })
 
+app.put('/api/people/:id',(req,res)=>{
+    const {id} = req.params
+    const {name } = req.body
+   
+    const person = people.find((person)=> person.id === Number(id))
+
+    if(!person){
+        return res 
+         .status(400)
+         .json({success : false , msg : 'please provide name value'})
+    }
+
+})
 
 app.listen(5000 , ()=>{
     console.log(`server is listening at http://localhost:5000`);
