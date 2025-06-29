@@ -1,3 +1,11 @@
 // ROUTER OR EXPRESS ROUTER
+const express =require('express')
+const app = express();
 
-// the problem 
+app.get('/',(req,res)=>{
+    res.send('hello world');
+})
+
+app.listen(5000 , ()=>{
+    console.log(`server is listening at http://localhost:5000`);
+})
