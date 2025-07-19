@@ -5,10 +5,15 @@ const app = express();
 let {people} = require('./data');
 
 // static assest(This makes everything inside the methods-public folder accessible on the frontend via the browser.)
+
 app.use(express.static('./methods-public'));
 
 // parse form data
 app.use(express.urlencoded({extended : false}))
+
+// This is required to handle data sent via HTML <form method="POST">.
+
+// Without it, req.body will be undefined.
 // extended property allows us to choose betweeen parsing the URL-encoded data with the querystring library(when false) or the qs libraray (when true).
 
 
