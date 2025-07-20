@@ -5,7 +5,7 @@ const app = express();
 let {people} = require('./data');
 
 // static assests
-app.use(express.static('./methods-public'));
+// app.use(express.static('./methods-public'));
 
 // parse form data
 app.use(express.urlencoded({extended : false}))
@@ -46,6 +46,13 @@ app.put('/api/people/:id',(req,res)=>{
          .status(400)
          .json({success : false , msg : 'please provide name value'})
     }
+    const newPeople  = people.map((person)=>{
+        if(person.id === Number(id)){
+            person.name = name
+        }
+        return person
+    })
+    res.status(200).json({success : true , data : newPeople})
 
 })
 
